@@ -36,7 +36,7 @@ import java.util.List;
  *             <li>The third is the name of object to create inside bucket</li>
  *             </ul>
  */
-public class ObjectStorageGetBucketExample {
+public class ObjectStorageCreateBucket {
     public static void main(String[] args) throws Exception {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
@@ -50,11 +50,11 @@ public class ObjectStorageGetBucketExample {
         final String bucket = args[1];
         final String object = args[2];
 
-        AuthenticationDetailsProvider provider =
+               AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);
 
         ObjectStorage client = new ObjectStorageClient(provider);
-        client.setRegion(Region.US_PHOENIX_1);
+        client.setRegion(Region.US_ASHBURN_1);
 
         System.out.println("Getting the namespace.");
         GetNamespaceResponse namespaceResponse =
